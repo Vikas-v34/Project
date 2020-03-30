@@ -1,8 +1,10 @@
-package daoLayer;
+package dtoLayer;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import daoLayer.User;
 
 public class Booking {
 	public long bookingId;

@@ -1,4 +1,4 @@
-package daoLayer;
+package dtoLayer;
 
 public class Airport {
 	public String airportName;

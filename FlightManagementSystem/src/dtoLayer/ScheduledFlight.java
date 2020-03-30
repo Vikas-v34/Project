@@ -1,4 +1,4 @@
-package daoLayer;
+package dtoLayer;
 
 public class ScheduledFlight {
 	public Flight flight;
