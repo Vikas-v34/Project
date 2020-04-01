@@ -4,8 +4,7 @@ import daoLayer.User;
 
 public class UserServiceImpl extends User{
 	public void addUser(int User){
-	//:User :-
-	//Adds a new user.
+		
 	}
 	public void viewUser(String BigInteger) {
 	//:User :-
