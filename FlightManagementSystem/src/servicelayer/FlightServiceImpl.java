@@ -1,22 +1,22 @@
 package servicelayer;
 
+
+import daoLayer.FlightDaoImpl;
+import dtoLayer.Flight;
+
 public class FlightServiceImpl {
-	public void addFlight(String Flight){
-		//: Flight :-	Adds a new flight which can be scheduled.
+	private FlightDaoImpl dao = new FlightDaoImpl();
+	boolean result;
+	public FlightServiceImpl() {
+		super();
 	}
-	public void modifyFlight(String Flight) {
-		//: Flight :-Modify the details of a flight.
+	public boolean addFlight(Flight flight){
+		result = dao.addFlightDao(flight);
+		return result;
 	}
-	public void viewFlight(String BigInteger) {
-		//: Flight :-Shows the details of a flight specified by the flight number.
+	public boolean deleteFlight(long flightNumber) {
+		result = dao.deleteFlight(flightNumber);
+		return result;
 	}
-	public void viewFlight() {
-		//: List<Flight> :-	View the details of all flights.
-	}
-	public void deleteFlight(String BigInteger) {
-		//: void :-Removes a flight.
-	}
-	public void validateFlight(String Flight){
-		//: void :-Validates the attributes of a flight.
-	}
+
 }
