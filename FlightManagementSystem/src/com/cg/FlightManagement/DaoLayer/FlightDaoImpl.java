@@ -17,7 +17,6 @@ public class FlightDaoImpl {
 			frr.add(flight.getFlightModel());
 			frr.add(flight.getCarrierName());
 			flightList.put((int) flight.getFlightNumber(),frr);
-			
 			return true;
 		}
 		public boolean deleteFlight(int flightNumber) {
