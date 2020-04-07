@@ -19,14 +19,11 @@ public class FlightDaoImpl {
 			flightList.put((int) flight.getFlightNumber(),frr);
 			return true;
 		}
-		public boolean deleteFlight(Integer flightNumber) {
+		public boolean deleteFlight(int flightNumber) {
 			flightList.remove(flightNumber);
 			return true;
 		}
-		public boolean deleteFlight(long flightNumber) {
-			// TODO Auto-generated method stub
-			return false;
-		}
+
 	}
 
 

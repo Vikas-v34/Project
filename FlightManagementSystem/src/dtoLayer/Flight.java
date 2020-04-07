@@ -3,12 +3,12 @@ package dtoLayer;
 import java.util.ArrayList;
 
 public class Flight {
-	public long flightNumber;
+	public int flightNumber;
 	public String flightModel;
 	public String carrierName;
 	public int seatCapacity;
 	ArrayList<Object> arr = new ArrayList<>();
-	public Flight(String flightModel, String carrierName, int seatCapacity, long flightNumber) {
+	public Flight(String flightModel, String carrierName, int seatCapacity, int flightNumber) {
 		// TODO Auto-generated constructor stub
 		super();
 		this.flightModel = flightModel;
@@ -19,10 +19,10 @@ public class Flight {
 		this.arr.add(carrierName);
 		this.arr.add(seatCapacity);
 	}
-	public long getFlightNumber() {
+	public int getFlightNumber() {
 		return flightNumber;
 	}
-	public void setFlightNumber(long flightNumber) {
+	public void setFlightNumber(int flightNumber) {
 		this.flightNumber = flightNumber;
 	}
 	public String getFlightModel() {

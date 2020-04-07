@@ -11,7 +11,7 @@ public class FlightManagementApp {
 		int ch=1;
 		boolean result;
 		int seatCapacity;
-		long flightNumber;
+		int flightNumber;
 		String flightName,carrierName;
 		
 		System.out.println("Enter 1 for Admin");
@@ -28,7 +28,7 @@ public class FlightManagementApp {
 				switch(ch) {
 				case 1:
 						System.out.println("Enter Flight Number");
-						flightNumber = sc.nextLong();
+						flightNumber = sc.nextInt();
 						System.out.println("Enter Flight Name");
 						flightName = sc.next();
 						System.out.println("Enter Carrier Name");

@@ -14,7 +14,7 @@ public class FlightServiceImpl {
 		result = dao.addFlightDao(flight);
 		return result;
 	}
-	public boolean deleteFlight(long flightNumber) {
+	public boolean deleteFlight(int flightNumber) {
 		result = dao.deleteFlight(flightNumber);
 		return result;
 	}
