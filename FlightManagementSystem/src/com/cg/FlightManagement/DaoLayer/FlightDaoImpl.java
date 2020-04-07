@@ -1,9 +1,9 @@
-package daoLayer;
+package com.cg.FlightManagement.DaoLayer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import dtoLayer.Flight;
+import com.cg.FlightManagement.DtoLayer.Flight;
 
 public class FlightDaoImpl {
 	private HashMap<Integer,ArrayList<Object>> flightList = new HashMap<>(); 

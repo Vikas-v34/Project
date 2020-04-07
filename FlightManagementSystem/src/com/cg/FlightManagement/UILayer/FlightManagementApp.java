@@ -1,9 +1,9 @@
-package uiLayer;
+package com.cg.FlightManagement.UILayer;
 
 import java.util.Scanner;
 
-import dtoLayer.Flight;
-import servicelayer.FlightServiceImpl;
+import com.cg.FlightManagement.DtoLayer.Flight;
+import com.cg.FlightManagement.Servicelayer.FlightServiceImpl;
 
 public class FlightManagementApp {
 

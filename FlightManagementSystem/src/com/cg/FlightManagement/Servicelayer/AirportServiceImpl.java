@@ -1,4 +1,4 @@
-package servicelayer;
+package com.cg.FlightManagement.Servicelayer;
 
 public class AirportServiceImpl {
 	public void viewAirport(){

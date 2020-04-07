@@ -1,4 +1,4 @@
-package dtoLayer;
+package com.cg.FlightManagement.DtoLayer;
 
 public class Passenger {
 	public long pnrNumber;

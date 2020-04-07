@@ -1,10 +1,10 @@
-package dtoLayer;
+package com.cg.FlightManagement.DtoLayer;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import daoLayer.User;
+import com.cg.FlightManagement.DaoLayer.User;
 
 public class Booking {
 	@Override

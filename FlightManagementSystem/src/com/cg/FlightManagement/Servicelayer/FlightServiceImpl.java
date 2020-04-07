@@ -1,8 +1,8 @@
-package servicelayer;
+package com.cg.FlightManagement.Servicelayer;
 
 
-import daoLayer.FlightDaoImpl;
-import dtoLayer.Flight;
+import com.cg.FlightManagement.DaoLayer.FlightDaoImpl;
+import com.cg.FlightManagement.DtoLayer.Flight;
 
 public class FlightServiceImpl {
 	private FlightDaoImpl dao = new FlightDaoImpl();

@@ -1,6 +1,6 @@
-package servicelayer;
+package com.cg.FlightManagement.Servicelayer;
 
-import daoLayer.User;
+import com.cg.FlightManagement.DaoLayer.User;
 
 public class UserServiceImpl extends User{
 	public void addUser(int User){

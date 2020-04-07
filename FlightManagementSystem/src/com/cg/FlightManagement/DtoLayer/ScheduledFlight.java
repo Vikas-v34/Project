@@ -1,4 +1,4 @@
-package dtoLayer;
+package com.cg.FlightManagement.DtoLayer;
 
 public class ScheduledFlight {
 	public Flight flight;

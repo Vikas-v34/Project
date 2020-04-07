@@ -1,4 +1,4 @@
-package dtoLayer;
+package com.cg.FlightManagement.DtoLayer;
 
 public class Airport {
 	public String airportName;
