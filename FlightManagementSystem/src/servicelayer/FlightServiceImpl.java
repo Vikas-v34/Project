@@ -18,5 +18,9 @@ public class FlightServiceImpl {
 		result = dao.deleteFlight(flightNumber);
 		return result;
 	}
+	public boolean showFlight(int flightNumber) {
+		result = dao.showFlight(flightNumber);
+		return true;
+	}
 
 }

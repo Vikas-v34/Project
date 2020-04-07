@@ -17,10 +17,16 @@ public class FlightDaoImpl {
 			frr.add(flight.getFlightModel());
 			frr.add(flight.getCarrierName());
 			flightList.put((int) flight.getFlightNumber(),frr);
+			
 			return true;
 		}
 		public boolean deleteFlight(int flightNumber) {
 			flightList.remove(flightNumber);
+			
+			return true;
+		}
+		public boolean showFlight(int flightNumber) {
+			System.out.println(frr);
 			return true;
 		}
 

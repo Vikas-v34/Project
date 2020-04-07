@@ -20,10 +20,13 @@ public class FlightManagementApp {
 		int choice = sc.nextInt();
 		FlightServiceImpl srvc = new FlightServiceImpl();
 		if(choice == 1) {
-			while(ch!=3) {
+			while(ch!=6) {
 				System.out.println("Press 1 to add flight");
 				System.out.println("Press 2 to Delete Flight");
-				System.out.println("Press 3 to Logout");
+				System.out.println("Press 3 to Modify Flight");
+				System.out.println("Press 4 to Search Flight");
+				System.out.println("Press 5 to Show Flight");
+				System.out.println("Press 6 to Logout");
 				ch = sc.nextInt();
 				switch(ch) {
 				case 1:
@@ -51,7 +54,12 @@ public class FlightManagementApp {
 					else
 						System.out.println("Unsuccessfull event"); 
 					break;
-				case 3:
+				case 5:
+					System.out.println("Enter Flight Number");
+					flightNumber = sc.nextInt();
+					result = srvc.showFlight(flightNumber);
+					break;
+				case 6:
 					System.out.println("Logged Out");
 					break;
 				default:
