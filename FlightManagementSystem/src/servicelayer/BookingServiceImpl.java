@@ -9,13 +9,13 @@ public class BookingServiceImpl {
 		related to the booking except the booking id can be
 	modified.*/
 	}
-	public void viewBooking(String BigInteger) {
+	public void viewBooking(long bookingId) {
 		//: List<Booking> :- Retrieves a booking made by the user based on the booking id.
 		}
 	public void viewBooking() {
 		//: List<Booking> :- Retrieves a list of all the bookings made.
 		}
-	public void deleteBooking(String BigInteger) {
+	public void deleteBooking(long bookingId) {
 		//: void :-Deletes a previous booking identifiable by the ‘bookingId’.
 		}
 	public void validateBooking(String Booking) {

@@ -52,14 +52,13 @@ public class FlightManagementApp {
 						System.out.println("Unsuccessfull event"); 
 					break;
 				case 3:
-					System.out.println("Fuck Off");
+					System.out.println("Logged Out");
 					break;
 				default:
-					System.out.println("Go ef yourself");
+					System.out.println("Invalid Event");
 				}
 			}
-		}
-		sc.close();
+		}sc.close();
 	}
 
 }

@@ -6,7 +6,7 @@ public class UserServiceImpl extends User{
 	public void addUser(int User){
 		
 	}
-	public void viewUser(String BigInteger) {
+	public void viewUser(long userId) {
 	//:User :-
 	//Shows the details of a user identifiable by the user id.
 	}
@@ -19,7 +19,7 @@ public class UserServiceImpl extends User{
 	//:User :-
 	//Updates the details of a user.
 	}
-	public void deleteUser(String BigInteger) {
+	public void deleteUser(long userId) {
 	//:void
 	//Removes a user as per the user id.
 	}

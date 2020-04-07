@@ -7,16 +7,16 @@ public class ScheduleFlightServiceImpl {
 		/*public void viewScheduledFlights(String Airport, int Airport,String LocalDate) {
 			//: List<Scheduled Flight> :-Returns a list of flights between two airports on a specified date.
 		}*/
-		public void viewScheduledFlights(String BigInteger) {
+		public void viewScheduledFlights(long flightNumber) {
 		//:Flight :-Returns a list of a scheduled flight identifiable by flight number.
 		}
 		public void viewScheduledFlight() {
 			//: List<ScheduledFlight> :-Shows all the details and status of all flights.
 		}
-		public void modifyScheduledFlight(String Flight,String Schedule,String Integer) {
+		public void modifyScheduledFlight(String Flight,String Schedule,Integer flighNumber) {
 			//: ScheduledFlight :-Modifies the details of a scheduled flight.
 		}
-		public void deleteScheduledFlight(String BigInteger) {
+		public void deleteScheduledFlight(long flightId) {
 			//: void :-Removes a flight from the available flights.
 		}
 		public void validateScheduledFlight(String ScheduledFlight) {
