@@ -66,7 +66,13 @@ public class FlightManagementApp {
 					System.out.println("Invalid Event");
 				}
 			}
-		}sc.close();
+		}else if(choice == 2) {
+			System.out.println("User");
+		}
+		else {
+			System.out.println("Invalid");
+		}
+		sc.close();
 	}
 
 }
