@@ -1,8 +1,14 @@
+
 package com.cg.FlightManagement.DtoLayer;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+
+
+
+
 
 
 
@@ -15,12 +21,12 @@ public class Booking {
 	}
 
 	private static int bookingId;
-	public User userId;
-	public Date bookingDate;
-	public List <Passenger> passengerList= new ArrayList<Passenger>();
-	public long ticketCost;
-	public Flight flight;
-	public int noOfPassengers;
+	private User userId;
+	private Date bookingDate;
+	private List <Passenger> passengerList= new ArrayList<Passenger>();
+	private long ticketCost;
+	private Flight flight;
+	private int noOfPassengers;
 	public static int getBookingId() {
 		return bookingId;
 	}

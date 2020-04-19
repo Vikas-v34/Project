@@ -1,11 +1,12 @@
 package com.cg.FlightManagement.DtoLayer;
 
 public class Passenger {
-	public long pnrNumber;
-	public String passengerName;
-	public int passengerAge;
-	public long passengerUIN;
-	public double Luggage;
+	private long pnrNumber;
+	private String passengerName;
+	private int passengerAge;
+	private long passengerUIN;
+	private double Luggage;
+	
 	public long getPnrNumber() {
 		return pnrNumber;
 	}
