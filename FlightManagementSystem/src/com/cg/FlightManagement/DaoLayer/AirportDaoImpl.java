@@ -12,16 +12,13 @@ public class AirportDaoImpl implements AirportDao{
 	
 	public List<Airport> viewAirport()throws AirportNotFoundException {
 		return airportList;
+	
 	}
 
 	@Override
 	public Airport viewAirportByCode(String airportCode) throws AirportCodeNotFoundException {
-			try {
 			Airport result = airportList.stream().filter(n -> n.getAirportCode() == airportCode).findAny().orElse(null);
 			return result;
-		}
-		catch(Exception e) {
-			throw e;
-		}
+		
 	}
 }
