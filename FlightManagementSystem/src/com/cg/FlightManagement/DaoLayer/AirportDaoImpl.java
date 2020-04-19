@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cg.FlightManagement.DtoLayer.Airport;
+import com.cg.FlightManagement.Exception.AirportCodeNotFoundException;
+import com.cg.FlightManagement.Exception.AirportNotFoundException;
 
 public class AirportDaoImpl implements AirportDao{
 	List<Airport> airportList = new ArrayList<Airport>();

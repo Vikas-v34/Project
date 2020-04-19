@@ -1,5 +1,5 @@
 package com.cg.FlightManagement.Exception;
 
-public class FlightNotAddedException {
+public class FlightNotAddedException extends Exception{
 
 }

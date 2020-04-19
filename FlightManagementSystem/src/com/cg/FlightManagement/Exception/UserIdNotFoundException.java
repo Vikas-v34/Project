@@ -1,5 +1,5 @@
 package com.cg.FlightManagement.Exception;
 
-public class UserIdNotFoundException {
+public class UserIdNotFoundException extends Exception{
 
 }

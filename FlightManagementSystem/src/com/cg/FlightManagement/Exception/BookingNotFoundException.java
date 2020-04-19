@@ -1,5 +1,5 @@
 package com.cg.FlightManagement.Exception;
 
-public class BookingNotFoundException {
+public class BookingNotFoundException extends Exception{
 
 }

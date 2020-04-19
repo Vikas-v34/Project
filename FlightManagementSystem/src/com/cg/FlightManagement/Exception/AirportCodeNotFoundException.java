@@ -1,5 +1,5 @@
 package com.cg.FlightManagement.Exception;
 
-public class AirportCodeNotFoundException {
+public class AirportCodeNotFoundException extends Exception{
 
 }

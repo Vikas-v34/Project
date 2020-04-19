@@ -1,5 +1,5 @@
 package com.cg.FlightManagement.Exception;
 
-public class UserIdNotDeletedException {
+public class UserIdNotDeletedException extends Exception {
 
 }

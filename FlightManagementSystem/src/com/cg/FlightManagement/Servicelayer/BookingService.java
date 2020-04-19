@@ -1,6 +1,10 @@
 package com.cg.FlightManagement.Servicelayer;
 import java.util.List;
 import com.cg.FlightManagement.DtoLayer.Booking;
+import com.cg.FlightManagement.Exception.BookingIdNotFoundException;
+import com.cg.FlightManagement.Exception.BookingNotAddedException;
+import com.cg.FlightManagement.Exception.BookingNotDeletedException;
+import com.cg.FlightManagement.Exception.BookingNotFoundException;
 
 
 public interface BookingService {
