@@ -1,9 +1,10 @@
 package com.cg.FlightManagement.DtoLayer;
 
 public class Airport {
-	public String airportName;
-	public String airportCode;
-	public String airportLocation;
+	private String airportName;
+	private String airportCode;
+	private String airportLocation;
+	
 	public String getAirportName() {
 		return airportName;
 	}

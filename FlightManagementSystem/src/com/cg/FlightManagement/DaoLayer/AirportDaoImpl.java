@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cg.FlightManagement.DtoLayer.Airport;
-import com.cg.FlightManagement.Servicelayer.AirportService;
 
-public class AirportDaoImpl implements AirportService {
+public class AirportDaoImpl implements AirportDao{
 	List<Airport> airportList = new ArrayList<Airport>();
 	
 	public List<Airport> viewAirport()throws Exception {

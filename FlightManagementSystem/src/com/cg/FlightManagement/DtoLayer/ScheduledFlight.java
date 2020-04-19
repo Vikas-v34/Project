@@ -1,10 +1,10 @@
 package com.cg.FlightManagement.DtoLayer;
 
 public class ScheduledFlight {
-	public Flight flight;
-	public int availableSeats;
-	public Schedule schedule;
-	public Flight getFlight() {
+	private Flight flight;
+	private int availableSeats;
+	private Schedule schedule;
+	private Flight getFlight() {
 		return flight;
 	}
 	public void setFlight(Flight flight) {

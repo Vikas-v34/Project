@@ -3,12 +3,12 @@ package com.cg.FlightManagement.DtoLayer;
 import java.util.Arrays;
 
 public class User {
-	public String userType;
-	public long userId;
-	public String userName;
-	public char[] userPassword;
-	public long userPhone;
-	public String userEmail;
+	private String userType;
+	private long userId;
+	private String userName;
+	private char[] userPassword;
+	private long userPhone;
+	private String userEmail;
 	public String getUserType() {
 		return userType;
 	}
