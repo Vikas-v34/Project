@@ -13,16 +13,18 @@ public class Booking {
 				+ ", passengerList=" + passengerList + ", ticketCost=" + ticketCost + ", flight=" + flight
 				+ ", noOfPassengers=" + noOfPassengers + "]";
 	}
-	public long bookingId;
+
+	private static int bookingId;
+	public User userId;
 	public Date bookingDate;
 	public List <Passenger> passengerList= new ArrayList<Passenger>();
 	public long ticketCost;
 	public Flight flight;
 	public int noOfPassengers;
-	public long getBookingId() {
+	public static int getBookingId() {
 		return bookingId;
 	}
-	public void setBookingId(long bookingId) {
+	public void setBookingId(int bookingId) {
 		this.bookingId = bookingId;
 	}
 
