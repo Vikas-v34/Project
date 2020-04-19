@@ -4,6 +4,8 @@ import com.cg.FlightManagement.DaoLayer.BookingDaoImpl;
 import com.cg.FlightManagement.DtoLayer.Booking;
 import com.cg.FlightManagement.Exception.BookingIdNotFoundException;
 import com.cg.FlightManagement.Exception.BookingNotAddedException;
+import com.cg.FlightManagement.Exception.BookingNotDeletedException;
+import com.cg.FlightManagement.Exception.BookingNotFoundException;
 
 public class BookingServiceImpl implements BookingService{
 	BookingDaoImpl bdi=new BookingDaoImpl();
@@ -20,22 +22,11 @@ public class BookingServiceImpl implements BookingService{
 	@Override
 	public List<Booking> viewBooking() throws BookingNotFoundException {
 		// TODO Auto-generated method stub
-		try {
-			return bdi.viewBooking();
-		}
-		catch(BookingNotFoundException e){
-			throw e;
-		}
+		return bdi.viewBooking();
 	}
 
 	@Override
 	public boolean deleteBooking(int bookingId) throws BookingNotDeletedException {
-		// TODO Auto-generated method stub
-		try {
-			return bdi.deleteBooking(bookingId);
-		}
-		catch(BokingNotDeletedException e){
-			throw e;
-		}
+		return bdi.deleteBooking(bookingId);
 	}
 }

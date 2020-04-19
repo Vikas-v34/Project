@@ -11,12 +11,7 @@ public class AirportDaoImpl implements AirportDao{
 	List<Airport> airportList = new ArrayList<Airport>();
 	
 	public List<Airport> viewAirport()throws AirportNotFoundException {
-		try {
-			return airportList;
-		}
-		catch(AirportNotFoundException e){
-			throw e;
-		}
+		return airportList;
 	}
 
 	@Override
