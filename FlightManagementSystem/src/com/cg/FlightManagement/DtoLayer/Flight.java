@@ -3,10 +3,10 @@ package com.cg.FlightManagement.DtoLayer;
 import java.util.ArrayList;
 
 public class Flight {
-	public int flightNumber;
-	public String flightModel;
-	public String carrierName;
-	public int seatCapacity;
+	private int flightNumber;
+	private String flightModel;
+	private String carrierName;
+	private int seatCapacity;
 	ArrayList<Object> arr = new ArrayList<>();
 	public Flight(String flightModel, String carrierName, int seatCapacity, int flightNumber) {
 		// TODO Auto-generated constructor stub

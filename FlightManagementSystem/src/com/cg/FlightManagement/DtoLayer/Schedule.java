@@ -3,10 +3,10 @@ package com.cg.FlightManagement.DtoLayer;
 import java.time.LocalDateTime;
 
 public class Schedule {
-	public Airport sourceAirport;
-	public Airport destinationAirport;
-	public LocalDateTime arrivalTime;
-	public LocalDateTime departureTime;
+	private Airport sourceAirport;
+	private Airport destinationAirport;
+	private LocalDateTime arrivalTime;
+	private LocalDateTime departureTime;
 	public Airport getSourceAirport() {
 		return sourceAirport;
 	}
