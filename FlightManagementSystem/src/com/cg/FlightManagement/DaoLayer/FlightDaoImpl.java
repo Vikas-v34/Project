@@ -5,14 +5,14 @@ import java.util.HashMap;
 
 import com.cg.FlightManagement.DtoLayer.Flight;
 
-public class FlightDaoImpl {
+public class FlightDaoImpl implements FlightDao{
 	private HashMap<Integer,ArrayList<Object>> flightList = new HashMap<>(); 
 	private ArrayList<Object> frr = new ArrayList<>();
 	
 	public FlightDaoImpl() {
 		super();
 	}
-		public boolean addFlightDao (Flight flight) {
+		public boolean addFlight(Flight flight) {
 			frr.add(flight.getSeatCapacity());
 			frr.add(flight.getFlightModel());
 			frr.add(flight.getCarrierName());
@@ -28,6 +28,7 @@ public class FlightDaoImpl {
 			System.out.println(frr);
 			return true;
 		}
+
 
 	}
 

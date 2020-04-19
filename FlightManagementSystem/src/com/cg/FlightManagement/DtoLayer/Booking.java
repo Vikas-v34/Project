@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.cg.FlightManagement.DaoLayer.User;
+
 
 public class Booking {
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", userId=" + userId + ", bookingDate=" + bookingDate
+		return "Booking [bookingId=" + bookingId + ", bookingDate=" + bookingDate
 				+ ", passengerList=" + passengerList + ", ticketCost=" + ticketCost + ", flight=" + flight
 				+ ", noOfPassengers=" + noOfPassengers + "]";
 	}
 	public long bookingId;
-	public User userId;
 	public Date bookingDate;
 	public List <Passenger> passengerList= new ArrayList<Passenger>();
 	public long ticketCost;
@@ -26,12 +25,7 @@ public class Booking {
 	public void setBookingId(long bookingId) {
 		this.bookingId = bookingId;
 	}
-	public User getUserId() {
-		return userId;
-	}
-	public void setUserId(User userId) {
-		this.userId = userId;
-	}
+
 	public Date getBookingDate() {
 		return bookingDate;
 	}

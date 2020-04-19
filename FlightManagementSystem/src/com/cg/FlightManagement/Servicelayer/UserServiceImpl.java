@@ -1,16 +1,17 @@
 package com.cg.FlightManagement.Servicelayer;
 
-import com.cg.FlightManagement.DaoLayer.User;
+import com.cg.FlightManagement.DaoLayer.UserDaoImpl;
 
-public class UserServiceImpl extends User{
+public class UserServiceImpl implements UserService{
+	private UserDaoImpl dao = new UserDaoImpl();
 	public void addUser(int User){
 		
 	}
-	public void viewUser(long userId) {
+	public void viewUserById(long userId) {
 	//:User :-
 	//Shows the details of a user identifiable by the user id.
 	}
-	public void viewUser1(){
+	public void viewUser(){
 	//: List<User> :-
 	//Shows the details of all users.
 	}

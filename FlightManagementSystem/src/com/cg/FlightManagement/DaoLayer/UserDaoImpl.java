@@ -1,6 +1,6 @@
 package com.cg.FlightManagement.DaoLayer;
 
-public class User {
+public class UserDaoImpl {
 
 	
 }
