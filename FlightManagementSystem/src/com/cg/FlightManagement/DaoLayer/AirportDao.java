@@ -9,6 +9,5 @@ public interface AirportDao {
 	public List<Airport> viewAirport() throws AirportNotFoundException;
 
 	public Airport viewAirportByCode(String airportCode) throws AirportCodeNotFoundException;
-	public List<Airport> viewAirport() throws Exception;
-	public Airport viewAirportByCode(String airportCode) throws Exception;
+
 }
