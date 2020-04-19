@@ -8,35 +8,35 @@ import com.cg.FlightManagement.DtoLayer.Booking;
 		List<Booking> bookingList=new ArrayList<Booking>();
 
 		@Override
-		public void addBooking(Booking b) throws Exception {
+		public void addBooking(Booking b) throws BookingNotAddedException {
 			// TODO Auto-generated method stub
 			try {
 				bookingList.add(b);
 			}
-			catch(Exception e){
+			catch(BookingNotAddedException e){
 				throw e;
 			}
 		}
 
 		@Override
-		public List<Booking> viewBookingById(int bookingId) throws Exception {
+		public List<Booking> viewBookingById(int bookingId) throws BookingIdNotFoundException {
 			// TODO Auto-generated method stub
 			return null;
 		}
 
 		@Override
-		public List<Booking> viewBooking() throws Exception {
+		public List<Booking> viewBooking() throws BookingNotFoundException {
 			// TODO Auto-generated method stub
 			try {
 				return bookingList;
 			}
-			catch(Exception e){
+			catch(BookingNotFoundException e){
 				throw e;
 			}
 		}
 
 		@Override
-		public boolean deleteBooking(int bookingId) throws Exception {
+		public boolean deleteBooking(int bookingId) throws BookingNotDeletedException {
 			// TODO Auto-generated method stub
 			try {
 				boolean available=false;
@@ -49,7 +49,7 @@ import com.cg.FlightManagement.DtoLayer.Booking;
 				}
 				return available;
 			}
-			catch(Exception e){
+			catch(BookingNotDeletedException e){
 				throw e;
 			}
 		}

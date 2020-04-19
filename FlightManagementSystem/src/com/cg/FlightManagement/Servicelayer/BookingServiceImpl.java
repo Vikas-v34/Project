@@ -6,45 +6,45 @@ import com.cg.FlightManagement.DtoLayer.Booking;
 public class BookingServiceImpl implements BookingService{
 	BookingDaoImpl bdi=new BookingDaoImpl();
 	@Override
-	public void addBooking(Booking b) throws Exception{
+	public void addBooking(Booking b) throws BookingNotAddedException{
 		// TODO Auto-generated method stub
 		try {
 			bdi.addBooking(b);
 		}
-		catch(Exception e){
+		catch(BookingNotAdded e){
 			throw e;
 		}
 	}
 
 	@Override
-	public List<Booking> viewBookingById(int bookingId) throws Exception {
+	public List<Booking> viewBookingById(int bookingId) throws BookingIdNotFoundException {
 		// TODO Auto-generated method stub
 		try {
 			return bdi.viewBookingById(bookingId);
 		}
-		catch(Exception e){
+		catch(BookingIdNotFoundException e){
 			throw e;
 		}
 	}
 
 	@Override
-	public List<Booking> viewBooking() throws Exception {
+	public List<Booking> viewBooking() throws BookingNotFoundException {
 		// TODO Auto-generated method stub
 		try {
 			return bdi.viewBooking();
 		}
-		catch(Exception e){
+		catch(BookingNotFoundException e){
 			throw e;
 		}
 	}
 
 	@Override
-	public boolean deleteBooking(int bookingId) throws Exception {
+	public boolean deleteBooking(int bookingId) throws BookingNotDeletedException {
 		// TODO Auto-generated method stub
 		try {
 			return bdi.deleteBooking(bookingId);
 		}
-		catch(Exception e){
+		catch(BokingNotDeletedException e){
 			throw e;
 		}
 	}

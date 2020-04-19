@@ -11,19 +11,19 @@ public class AirportServiceImpl implements AirportService {
 	AirportDaoImpl adi = new AirportDaoImpl();
 
 	@Override
-	public List<Airport> viewAirport() throws Exception {
+	public List<Airport> viewAirport() throws AirportNotFoundException {
 		try {
 			return adi.viewAirport();
-		} catch (Exception e) {
+		} catch (AirportNotFoundException e) {
 			throw e;
 		}
 	}
 
 	@Override
-	public Airport viewAirportByCode(String airportCode) throws Exception {
+	public Airport viewAirportByCode(String airportCode) throws AirportCodeNotFoundException {
 		try {
 			return adi.viewAirportByCode(airportCode);
-		} catch (Exception e) {
+		} catch (AirportCodeNotFoundException e) {
 			throw e;
 		}
 	}

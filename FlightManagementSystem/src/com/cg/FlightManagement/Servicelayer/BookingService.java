@@ -4,9 +4,9 @@ import com.cg.FlightManagement.DtoLayer.Booking;
 
 
 public interface BookingService {
-	public void addBooking(Booking b)throws Exception ;
-	public List<Booking> viewBookingById(int bookingId)throws Exception;
-	public List<Booking> viewBooking()throws Exception ;
-	public boolean deleteBooking(int bookingId)throws Exception;
+	public void addBooking(Booking b)throws BookingNotAddedException ;
+	public List<Booking> viewBookingById(int bookingId)throws BookingIdNotFoundException;
+	public List<Booking> viewBooking()throws BookingNotFoundException ;
+	public boolean deleteBooking(int bookingId)throws BookingNotDeletedException;
 
 }
