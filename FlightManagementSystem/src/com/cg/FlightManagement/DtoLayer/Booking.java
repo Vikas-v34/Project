@@ -1,10 +1,9 @@
+
 package com.cg.FlightManagement.DtoLayer;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-
 
 public class Booking {
 	@Override
@@ -25,7 +24,7 @@ public class Booking {
 		return bookingId;
 	}
 	public void setBookingId(int bookingId) {
-		this.bookingId = bookingId;
+		Booking.bookingId = bookingId;
 	}
 
 	public Date getBookingDate() {
@@ -57,5 +56,11 @@ public class Booking {
 	}
 	public void setNoOfPassengers(int noOfPassengers) {
 		this.noOfPassengers = noOfPassengers;
+	}
+	public User getUserId() {
+		return userId;
+	}
+	public void setUserId(User userId) {
+		this.userId = userId;
 	}
 }
