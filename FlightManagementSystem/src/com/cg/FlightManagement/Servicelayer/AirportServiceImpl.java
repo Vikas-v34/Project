@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.cg.FlightManagement.DaoLayer.AirportDaoImpl;
 import com.cg.FlightManagement.DtoLayer.Airport;
+import com.cg.FlightManagement.Exception.AirportCodeNotFoundException;
+import com.cg.FlightManagement.Exception.AirportNotFoundException;
 
 public class AirportServiceImpl implements AirportService {
 	List<Airport> airportList = new ArrayList<Airport>();

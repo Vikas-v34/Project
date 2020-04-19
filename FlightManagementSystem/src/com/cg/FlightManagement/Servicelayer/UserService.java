@@ -1,5 +1,11 @@
 package com.cg.FlightManagement.Servicelayer;
 
+import com.cg.FlightManagement.Exception.UserIdNotDeletedException;
+import com.cg.FlightManagement.Exception.UserIdNotFoundException;
+import com.cg.FlightManagement.Exception.UserNotAddedException;
+import com.cg.FlightManagement.Exception.UserNotFoundException;
+import com.cg.FlightManagement.Exception.UserNotUpdatedException;
+
 public interface UserService {
 	public void addUser(int User) throws UserNotAddedException;
 	public void viewUserById(long userId) throws UserIdNotFoundException;
