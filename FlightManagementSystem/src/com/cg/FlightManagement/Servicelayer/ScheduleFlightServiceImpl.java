@@ -13,7 +13,7 @@ public class ScheduleFlightServiceImpl {
 		public void viewScheduledFlight() {
 			//: List<ScheduledFlight> :-Shows all the details and status of all flights.
 		}
-		public void modifyScheduledFlight(String Flight,String Schedule,Integer flighNumber) {
+		public void modifyScheduledFlight(String Flight,String Schedule,Integer flightNumber) {
 			//: ScheduledFlight :-Modifies the details of a scheduled flight.
 		}
 		public void deleteScheduledFlight(long flightId) {
