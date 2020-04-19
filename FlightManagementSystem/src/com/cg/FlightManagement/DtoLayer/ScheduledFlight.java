@@ -4,7 +4,7 @@ public class ScheduledFlight {
 	private Flight flight;
 	private int availableSeats;
 	private Schedule schedule;
-	private Flight getFlight() {
+	public Flight getFlight() {
 		return flight;
 	}
 	public void setFlight(Flight flight) {
