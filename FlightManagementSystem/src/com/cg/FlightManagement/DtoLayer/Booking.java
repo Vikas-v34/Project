@@ -13,8 +13,7 @@ public class Booking {
 				+ ", passengerList=" + passengerList + ", ticketCost=" + ticketCost + ", flight=" + flight
 				+ ", noOfPassengers=" + noOfPassengers + "]";
 	}
-
-	private static int bookingId;
+	private static int bookingId=0;
 	public User userId;
 	public Date bookingDate;
 	public List <Passenger> passengerList= new ArrayList<Passenger>();
@@ -25,7 +24,7 @@ public class Booking {
 		return bookingId;
 	}
 	public void setBookingId(int bookingId) {
-		this.bookingId = bookingId;
+		Booking.bookingId = bookingId;
 	}
 
 	public Date getBookingDate() {
