@@ -1,27 +1,51 @@
 package com.cg.FlightManagement.Servicelayer;
+import java.util.List;
+import com.cg.FlightManagement.DaoLayer.BookingDaoImpl;
+import com.cg.FlightManagement.DtoLayer.Booking;
 
-public class BookingServiceImpl {
-	public void addBooking(String Booking){
-		//:Booking :- Creates a new booking.
+public class BookingServiceImpl implements BookingService{
+	BookingDaoImpl bdi=new BookingDaoImpl();
+	@Override
+	public void addBooking(Booking b) throws Exception{
+		// TODO Auto-generated method stub
+		try {
+			bdi.addBooking(b);
 		}
-	public void modifyBooking(String Booking) {
-		/*: Booking :- Modifies a previous booking. All	information 
-		related to the booking except the booking id can be
-	modified.*/
+		catch(Exception e){
+			throw e;
+		}
 	}
-	public void viewBooking(long bookingId) {
-		//: List<Booking> :- Retrieves a booking made by the user based on the booking id.
+
+	@Override
+	public List<Booking> viewBookingById(int bookingId) throws Exception {
+		// TODO Auto-generated method stub
+		try {
+			return bdi.viewBookingById(bookingId);
 		}
-	public void viewBooking() {
-		//: List<Booking> :- Retrieves a list of all the bookings made.
+		catch(Exception e){
+			throw e;
 		}
-	public void deleteBooking(long bookingId) {
-		//: void :-Deletes a previous booking identifiable by the ‘bookingId’.
-		}
-	public void validateBooking(String Booking) {
-		//: void :-Validates the attributes of a booking.
 	}
-	public void validatePassenger(String Passenger)	{
-		//: void :-	Validates the attributes of a passenger.
+
+	@Override
+	public List<Booking> viewBooking() throws Exception {
+		// TODO Auto-generated method stub
+		try {
+			return bdi.viewBooking();
 		}
+		catch(Exception e){
+			throw e;
+		}
+	}
+
+	@Override
+	public boolean deleteBooking(int bookingId) throws Exception {
+		// TODO Auto-generated method stub
+		try {
+			return bdi.deleteBooking(bookingId);
+		}
+		catch(Exception e){
+			throw e;
+		}
+	}
 }
