@@ -10,6 +10,7 @@ import com.cg.ScheduleService.FlightManagementSystem.Entity.Schedule;
 import com.cg.ScheduleService.FlightManagementSystem.Exception.FlightNotFoundException;
 import com.cg.ScheduleService.FlightManagementSystem.Exception.RouteNotFoundException;
 import com.cg.ScheduleService.FlightManagementSystem.Service.ScheduleService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 public class ScheduleController {
 	@Autowired
@@ -21,6 +22,7 @@ public class ScheduleController {
 	}
 
 	@GetMapping("/flightdetails/{flightid}")
+	@HystrixCommand(fallbackMethod = "invalidflightId")
 	public Schedule getByFlightId(@PathVariable("flightid") long flightid) throws FlightNotFoundException {
 
 		return schdlser.getByFlightId(flightid);
@@ -28,9 +30,18 @@ public class ScheduleController {
 	}
 
 	@GetMapping("/flightdetails/{routeid}")
+	@HystrixCommand(fallbackMethod = "invalidrouteId")
 	public Schedule getByRouteId(@PathVariable("routeid") long routeid) throws RouteNotFoundException {
 
 		return schdlser.getByRouteId(routeid);
 
+	}
+
+	Schedule invalidflightId(@PathVariable("flightId") long flightId) {
+		return new Schedule();
+	}
+
+	Schedule invalidrouteId(@PathVariable("routeId") long routeId) {
+		return new Schedule();
 	}
 }
