@@ -21,25 +21,25 @@ private String destinationAirport;
 private Time arrivalTime;
 @Column(name="departure_time")
 private Time departureTime;
-@Column(name="airport_name")
-private String airportName;
-@Column(name="airport_location")
-private String airortLocation;
+@Column(name="flight_id")
+private Long flightId;
+
 
 public Route() {
 	super();
 }
-public Route(String sourceAirport,String destinationAirport,Time arrivalTime, Time departureTime, String airportName, String airportLocation ) {
+public Route(String sourceAirport,String destinationAirport,Time arrivalTime, Time departureTime, Long flightId ) {
 	super();
 	this.sourceAirport= sourceAirport;
 	this.destinationAirport = destinationAirport;
 	this.arrivalTime = arrivalTime;
 	this.departureTime = departureTime;
-	this.airportName = airportName;
-	this.airortLocation = airportLocation;
+	this.flightId = flightId;
+	
 	
 	
 }
+
 public String getSourceAirport() {
 	return sourceAirport;
 }
@@ -64,24 +64,18 @@ public Time getDepartureTime() {
 public void setDepartureTime(Time departureTime) {
 	this.departureTime = departureTime;
 }
-public String getAirportName() {
-	return airportName;
+public Long getFlightId() {
+	return flightId;
 }
-public void setAirportName(String airportName) {
-	this.airportName = airportName;
-}
-public String getAirortLocation() {
-	return airortLocation;
-}
-public void setAirortLocation(String airortLocation) {
-	this.airortLocation = airortLocation;
+public void setFlightId(Long flightId) {
+	this.flightId = flightId;
 }
 @Override
 public String toString() {
 	return "Route [sourceAirport=" + sourceAirport + ", destinationAirport=" + destinationAirport + ", arrivalTime="
-			+ arrivalTime + ", departureTime=" + departureTime + ", airportName=" + airportName + ", airortLocation="
-			+ airortLocation + "]";
+			+ arrivalTime + ", departureTime=" + departureTime + ", flightId=" + flightId + "]";
 }
+
 
 
 
