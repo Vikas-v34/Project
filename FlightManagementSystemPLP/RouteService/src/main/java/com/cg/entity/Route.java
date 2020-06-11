@@ -11,9 +11,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 	 
 
-	@Entity(name="Route")
+	@Entity(name="route")
 	public class Route {
 	    
 	@Id
@@ -29,6 +31,7 @@ import javax.persistence.Id;
 	@Column(name="departure_time")
 	private Time departureTime;
 	@Column(name="date_of_journey")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dateOfJourney;
 	@Override
 	public String toString() {
