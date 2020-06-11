@@ -13,7 +13,6 @@ public class Schedule {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="flight_Id")
 	private long flightId;
-	
 	@Column(name="route_Id")
 	private long routeId;
 

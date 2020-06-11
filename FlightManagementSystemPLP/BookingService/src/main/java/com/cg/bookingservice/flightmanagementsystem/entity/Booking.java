@@ -12,14 +12,14 @@ import javax.persistence.Id;
 @Entity(name="Booking")
 public class Booking {
 	
-	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flight) {
+	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
 		super();
 		this.bookingId = bookingId;
 		this.userId = userId;
 		this.bookingDate = bookingDate;
 		this.ticketCost = ticketCost;
 		this.noOfPassengers = noOfPassengers;
-		this.flight = flight;
+		this.flightId = flightId;
 	}
 	public Booking() {
 		super();
@@ -37,8 +37,8 @@ public class Booking {
 	private long ticketCost;
 	@Column(name="no-of_passengers")
 	private long noOfPassengers;
-	@Column(name="flight")
-	private long flight;
+	@Column(name="flight_id")
+	private long flightId;
 	public long getBookingId() {
 		return bookingId;
 	}
@@ -69,15 +69,16 @@ public class Booking {
 	public void setNoOfPassengers(long noOfPassengers) {
 		this.noOfPassengers = noOfPassengers;
 	}
-	public long getFlight() {
-		return flight;
+	public long getFlightId() {
+		return flightId;
 	}
-	public void setFlight(long flight) {
-		this.flight = flight;
+	public void setFlightId(long flightId) {
+		this.flightId = flightId;
 	}
 	@Override
 	public String toString() {
 		return "Booking [bookingId=" + bookingId + ", userId=" + userId + ", bookingDate=" + bookingDate
-				+ ", ticketCost=" + ticketCost + ", noOfPassengers=" + noOfPassengers + "]";
+				+ ", ticketCost=" + ticketCost + ", noOfPassengers=" + noOfPassengers + ", flightId=" + flightId + "]";
 	}
+	
 }
