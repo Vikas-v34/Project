@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.bookingservice.flightmanagementsystem.entity.Booking;
 import com.cg.bookingservice.flightmanagementsystem.service.BookingService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
 @RequestMapping(value="/bookingControl")
@@ -37,6 +38,7 @@ public class BookingController {
 		
 	//To get Booking by Booking Id
 	@GetMapping(value="/getById/bookingId= {bookId}",produces= MediaType.APPLICATION_JSON_VALUE)
+	@HystrixCommand(fallbackMethod = "invalidBookingId")
 	Booking getBookingByBookingId(@PathVariable("bookId")Long bookId) {
 		return bookingsrvce.getBookingByBookingId(bookId);
 	}
@@ -55,4 +57,9 @@ public class BookingController {
 	Booking cancelingBookingByBookingId(@PathVariable("bookId")long bookId) {
 		return bookingsrvce.cancelingBookingByBookingId(bookId);
 	}
+	
+	Booking invalidBookingId(@PathVariable("bookId")long bookId) {
+		return new Booking();
+	}
+	
 }

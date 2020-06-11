@@ -1,6 +1,7 @@
 package com.cg.entity;
 
 import java.sql.Time;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,8 @@ public class Route {
 	
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
+@Column(name="route_id")
+private long routeId;
 @Column(name="source_airport")
 private String sourceAirport;
 @Column(name="destination_airport")
@@ -21,24 +24,19 @@ private String destinationAirport;
 private Time arrivalTime;
 @Column(name="departure_time")
 private Time departureTime;
-@Column(name="airport_name")
-private String airportName;
-@Column(name="airport_location")
-private String airortLocation;
-
-public Route() {
-	super();
+@Column(name="date_of_journey")
+private Date dateOfJourney;
+@Override
+public String toString() {
+	return "Route [routeId=" + routeId + ", sourceAirport=" + sourceAirport + ", destinationAirport="
+			+ destinationAirport + ", arrivalTime=" + arrivalTime + ", departureTime=" + departureTime
+			+ ", dateOfJourney=" + dateOfJourney + "]";
 }
-public Route(String sourceAirport,String destinationAirport,Time arrivalTime, Time departureTime, String airportName, String airportLocation ) {
-	super();
-	this.sourceAirport= sourceAirport;
-	this.destinationAirport = destinationAirport;
-	this.arrivalTime = arrivalTime;
-	this.departureTime = departureTime;
-	this.airportName = airportName;
-	this.airortLocation = airportLocation;
-	
-	
+public long getRouteId() {
+	return routeId;
+}
+public void setRouteId(long routeId) {
+	this.routeId = routeId;
 }
 public String getSourceAirport() {
 	return sourceAirport;
@@ -64,23 +62,25 @@ public Time getDepartureTime() {
 public void setDepartureTime(Time departureTime) {
 	this.departureTime = departureTime;
 }
-public String getAirportName() {
-	return airportName;
+public Date getDateOfJourney() {
+	return dateOfJourney;
 }
-public void setAirportName(String airportName) {
-	this.airportName = airportName;
+public void setDateOfJourney(Date dateOfJourney) {
+	this.dateOfJourney = dateOfJourney;
 }
-public String getAirortLocation() {
-	return airortLocation;
+public Route(long routeId, String sourceAirport, String destinationAirport, Time arrivalTime, Time departureTime,
+		Date dateOfJourney) {
+	super();
+	this.routeId = routeId;
+	this.sourceAirport = sourceAirport;
+	this.destinationAirport = destinationAirport;
+	this.arrivalTime = arrivalTime;
+	this.departureTime = departureTime;
+	this.dateOfJourney = dateOfJourney;
 }
-public void setAirortLocation(String airortLocation) {
-	this.airortLocation = airortLocation;
-}
-@Override
-public String toString() {
-	return "Route [sourceAirport=" + sourceAirport + ", destinationAirport=" + destinationAirport + ", arrivalTime="
-			+ arrivalTime + ", departureTime=" + departureTime + ", airportName=" + airportName + ", airortLocation="
-			+ airortLocation + "]";
+public Route() {
+	super();
+	// TODO Auto-generated constructor stub
 }
 
 
