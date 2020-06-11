@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.entity.Route;
 import com.cg.service.RouteService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
 @RequestMapping("/routeCtrl")
@@ -21,6 +22,7 @@ public class RouteController {
 	RouteService routeService;
 	
 	@GetMapping("/{src}/{dst}/{date}")
+	@HystrixCommand(fallbackMethod = "Invalidlocationordate")
 	List<Route> searchRoute(@PathVariable("src")String source,@PathVariable("dst")String destination,@PathVariable("date")String date) throws ParseException{
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");		
@@ -35,4 +37,8 @@ public class RouteController {
 		
 		return routeService.getAllRoutes();
 	}
+	Route invalidlocationordate(@PathVariable("src")String source,@PathVariable("dst")String destination,@PathVariable("date")String date) {
+		return new Route();
+	}
+	
 }
