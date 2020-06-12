@@ -8,8 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="Booking")
+@Entity 
+@Table(name="booking")
 public class Booking {
 	
 	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
@@ -35,7 +37,7 @@ public class Booking {
 	private Date bookingDate;
 	@Column(name="ticket_cost")
 	private long ticketCost;
-	@Column(name="no-of_passengers")
+	@Column(name="no_of_passengers")
 	private long noOfPassengers;
 	@Column(name="flight_id")
 	private long flightId;

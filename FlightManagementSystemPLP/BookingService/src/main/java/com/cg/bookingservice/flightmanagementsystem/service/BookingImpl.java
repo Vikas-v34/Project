@@ -3,13 +3,15 @@ package com.cg.bookingservice.flightmanagementsystem.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.bookingservice.flightmanagementsystem.entity.Booking;
 import com.cg.bookingservice.flightmanagementsystem.repository.BookingRepository;
 
+@Service
 public class BookingImpl implements BookingService{
 	@Autowired
-	private BookingRepository bookingRepo;
+    BookingRepository bookingRepo;
 
 	@Override
 	public Booking addNewBooking(Booking booking) {
