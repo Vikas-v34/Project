@@ -24,7 +24,7 @@ public class Schedule {
 
 	public Schedule() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public long getFlightId() {
