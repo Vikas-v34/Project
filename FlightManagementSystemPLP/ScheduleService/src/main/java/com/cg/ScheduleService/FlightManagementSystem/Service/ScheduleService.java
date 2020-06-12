@@ -1,18 +1,21 @@
 package com.cg.ScheduleService.FlightManagementSystem.Service;
 
-
+import java.util.List;
 import org.springframework.stereotype.Service;
+import com.cg.ScheduleService.FlightManagementSystem.Entity.Schedule;
+import com.cg.ScheduleService.FlightManagementSystem.Exception.FlightNotFoundException;
+import com.cg.ScheduleService.FlightManagementSystem.Exception.RouteNotFoundException;
 
-
-
-<<<<<<< HEAD
 @Service
 public interface ScheduleService {
 	
-=======
-	List<Schedule> getAllFlightsandRoutes();
-	//xkfsdkllfjsda
->>>>>>> 003fd8c24dfc4c5b09700ef438567242c56c2ddd
+
+	public List<Schedule> getAllFlightsandRoutes();
+
+	public Schedule getByFlightId(long flightid) throws FlightNotFoundException ;
+
+	public Schedule getByRouteId(long routeid)throws RouteNotFoundException ;
+	
 
 	
 	

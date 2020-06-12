@@ -12,7 +12,7 @@ import com.cg.ScheduleService.FlightManagementSystem.Exception.RouteNotFoundExce
 import com.cg.ScheduleService.FlightManagementSystem.Repository.ScheduleRepository;
 
 @Service
-public abstract class ScheduleImpl implements ScheduleService {
+public class ScheduleImpl implements ScheduleService {
 	@Autowired
 	ScheduleRepository schdlrepo;
 
@@ -20,16 +20,20 @@ public abstract class ScheduleImpl implements ScheduleService {
 		return schdlrepo.findAll();
 	}
 
-	public Schedule getByFlightId(Long flightid) throws FlightNotFoundException {
+
+	@Override
+	public Schedule getByFlightId(long flightid) throws FlightNotFoundException{
 		Optional<Schedule> optflight = schdlrepo.findById(flightid);
 		if (optflight.isPresent()) {
 			return optflight.get();
 		} else {
 			throw new FlightNotFoundException("Flight not found for given flightid");
 		}
+		
 	}
 
-	public Schedule getByRouteId(Long routeid) throws RouteNotFoundException {
+	@Override
+	public Schedule getByRouteId(long routeid)throws RouteNotFoundException {
 		Optional<Schedule> optflight = schdlrepo.findById(routeid);
 		if (optflight.isPresent()) {
 			return optflight.get();
@@ -37,6 +41,7 @@ public abstract class ScheduleImpl implements ScheduleService {
 			throw new RouteNotFoundException("Route not found for given routeid");
 		}
 
+		
 	}
 
 }
