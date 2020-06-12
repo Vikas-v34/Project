@@ -1,20 +1,14 @@
 package com.cg.ScheduleService.FlightManagementSystem.Service;
-
-
-import org.springframework.stereotype.Service;
-
-
-
-<<<<<<< HEAD
-@Service
+ 
+import java.util.List;
+ 
+import com.cg.ScheduleService.FlightManagementSystem.Entity.Schedule;
+ 
 public interface ScheduleService {
-	
-=======
-	List<Schedule> getAllFlightsandRoutes();
-	//xkfsdkllfjsda
->>>>>>> 003fd8c24dfc4c5b09700ef438567242c56c2ddd
-
-	
-	
-	
+    Schedule getByFlightId(long flightid);
+ 
+    Schedule getByRouteId(long routeid);
+ 
+    List<Schedule> getAllFlightsandRoutes();
+ 
 }
