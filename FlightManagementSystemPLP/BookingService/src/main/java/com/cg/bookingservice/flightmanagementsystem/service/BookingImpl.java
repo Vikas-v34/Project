@@ -35,7 +35,7 @@ public class BookingImpl implements BookingService{
 	public List<Booking> updateBookingByBookingId(long bookingId, Booking booking) {
 		// TODO Auto-generated method stub
 		Booking temp = null;
-		List<Booking> tempList = bookingRepo.findAllById(bookingId);
+		List<Booking> tempList = bookingRepo.findAllByBookingId(bookingId);
 		for(int i=0;i<tempList.size();i++) {
 			temp = tempList.get(i);
 			temp.setBookingId(booking.getBookingId());
@@ -43,13 +43,13 @@ public class BookingImpl implements BookingService{
 			temp.setNoOfPassengers(booking.getNoOfPassengers());
 			temp.setFlightId(booking.getFlightId());
 		}
-		return bookingRepo.findAllById(bookingId);
+		return bookingRepo.findAllByBookingId(bookingId);
 	}
 
 	@Override
 	public Booking cancelingBookingByBookingId(long bookingId) {
 		// TODO Auto-generated method stub
-		Booking temp = bookingRepo.deleteById(bookingId);
+		Booking temp = bookingRepo.deleteByBookingId(bookingId);
 		return bookingRepo.save(temp);
 	}
 

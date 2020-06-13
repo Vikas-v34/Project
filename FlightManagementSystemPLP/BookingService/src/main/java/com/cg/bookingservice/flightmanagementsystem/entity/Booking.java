@@ -14,19 +14,7 @@ import javax.persistence.Table;
 @Table(name="booking")
 public class Booking {
 	
-	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
-		super();
-		this.bookingId = bookingId;
-		this.userId = userId;
-		this.bookingDate = bookingDate;
-		this.ticketCost = ticketCost;
-		this.noOfPassengers = noOfPassengers;
-		this.flightId = flightId;
-	}
-	public Booking() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="booking_id")
@@ -41,6 +29,19 @@ public class Booking {
 	private long noOfPassengers;
 	@Column(name="flight_id")
 	private long flightId;
+	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
+		super();
+		this.bookingId = bookingId;
+		this.userId = userId;
+		this.bookingDate = bookingDate;
+		this.ticketCost = ticketCost;
+		this.noOfPassengers = noOfPassengers;
+		this.flightId = flightId;
+	}
+	public Booking() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public long getBookingId() {
 		return bookingId;
 	}

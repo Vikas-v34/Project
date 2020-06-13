@@ -10,8 +10,8 @@ import com.cg.bookingservice.flightmanagementsystem.entity.Booking;
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Long>{
 
-	List<Booking> findAllById(long bookingId);
-	Booking deleteById(long bookingId);
+	List<Booking> findAllByBookingId(long bookingId);
+	Booking deleteByBookingId(long bookingId);
 	
 
 }
