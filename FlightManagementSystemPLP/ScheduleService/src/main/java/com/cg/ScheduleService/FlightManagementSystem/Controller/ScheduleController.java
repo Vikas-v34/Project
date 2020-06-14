@@ -27,16 +27,16 @@ public class ScheduleController {
 	public List<Schedule> getAllFlightsandRoutes() {
 		return schdlser.getAllFlightsandRoutes();
 	}
-
+//	http://localhost:9091/scheduleCtrl/flightId/1001
 	@GetMapping("/flightId/{flightid}")
 	@HystrixCommand(fallbackMethod = "invalidflightId",commandKey="vikasCommandKey",
 			groupKey="vikasGroupKet")
-	public Schedule getByFlightId(@PathVariable("flightid") long flightid) throws FlightNotFoundException {
+	public Schedule getByFlightId(@PathVariable long flightid) throws FlightNotFoundException {
 
 		return schdlser.getByFlightId(flightid);
 
 	}
-
+//	http://localhost:9091/scheduleCtrl/routeId/101
 	@GetMapping("/routeId/{routeid}")
 	@HystrixCommand(fallbackMethod = "invalidrouteId" ,commandKey="vikasCommandKey",
 			groupKey="vikasGroupKet")
