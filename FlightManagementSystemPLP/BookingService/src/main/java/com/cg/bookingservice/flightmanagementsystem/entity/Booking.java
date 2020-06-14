@@ -8,10 +8,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="Booking")
+@Entity 
+@Table(name="booking")
 public class Booking {
 	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="booking_id")
+	private long bookingId;
+	@Column(name="user_id")
+	private long userId;
+	@Column(name="booking_date")
+	private Date bookingDate;
+	@Column(name="ticket_cost")
+	private long ticketCost;
+	@Column(name="no_of_passengers")
+	private long noOfPassengers;
+	@Column(name="flight_id")
+	private long flightId;
 	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
 		super();
 		this.bookingId = bookingId;
@@ -25,20 +42,6 @@ public class Booking {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="booking_id")
-	private long bookingId;
-	@Column(name="user_id")
-	private long userId;
-	@Column(name="booking_date")
-	private Date bookingDate;
-	@Column(name="ticket_cost")
-	private long ticketCost;
-	@Column(name="no-of_passengers")
-	private long noOfPassengers;
-	@Column(name="flight_id")
-	private long flightId;
 	public long getBookingId() {
 		return bookingId;
 	}

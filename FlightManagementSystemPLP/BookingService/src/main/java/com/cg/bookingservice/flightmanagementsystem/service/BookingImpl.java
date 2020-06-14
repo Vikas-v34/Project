@@ -3,13 +3,15 @@ package com.cg.bookingservice.flightmanagementsystem.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.bookingservice.flightmanagementsystem.entity.Booking;
 import com.cg.bookingservice.flightmanagementsystem.repository.BookingRepository;
 
+@Service
 public class BookingImpl implements BookingService{
 	@Autowired
-	private BookingRepository bookingRepo;
+    BookingRepository bookingRepo;
 
 	@Override
 	public Booking addNewBooking(Booking booking) {
@@ -33,7 +35,7 @@ public class BookingImpl implements BookingService{
 	public List<Booking> updateBookingByBookingId(long bookingId, Booking booking) {
 		// TODO Auto-generated method stub
 		Booking temp = null;
-		List<Booking> tempList = bookingRepo.findAllById(bookingId);
+		List<Booking> tempList = bookingRepo.findAllByBookingId(bookingId);
 		for(int i=0;i<tempList.size();i++) {
 			temp = tempList.get(i);
 			temp.setBookingId(booking.getBookingId());
@@ -41,13 +43,13 @@ public class BookingImpl implements BookingService{
 			temp.setNoOfPassengers(booking.getNoOfPassengers());
 			temp.setFlightId(booking.getFlightId());
 		}
-		return bookingRepo.findAllById(bookingId);
+		return bookingRepo.findAllByBookingId(bookingId);
 	}
 
 	@Override
 	public Booking cancelingBookingByBookingId(long bookingId) {
 		// TODO Auto-generated method stub
-		Booking temp = bookingRepo.deleteById(bookingId);
+		Booking temp = bookingRepo.deleteByBookingId(bookingId);
 		return bookingRepo.save(temp);
 	}
 
