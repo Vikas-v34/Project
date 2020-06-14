@@ -68,7 +68,7 @@ public class BookingController {
 	}
 	
 	//http://localhost:9092/bookingControl/updateBooking/1009
-	public List<Booking> invalidBookId(long bookId){
+	public List<Booking> invalidBookId(long bookId,Booking booking){
 		List<Booking> list = new ArrayList<Booking>();
 		return list;
 	}
