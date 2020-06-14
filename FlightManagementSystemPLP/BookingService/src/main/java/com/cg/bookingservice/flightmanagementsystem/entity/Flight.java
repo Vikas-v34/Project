@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name="booking")
-public class Booking {
+public class Flight {
 	
 	
 	@Id
@@ -29,7 +29,7 @@ public class Booking {
 	private long noOfPassengers;
 	@Column(name="flight_id")
 	private long flightId;
-	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
+	public Flight(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
 		super();
 		this.bookingId = bookingId;
 		this.userId = userId;
@@ -38,10 +38,10 @@ public class Booking {
 		this.noOfPassengers = noOfPassengers;
 		this.flightId = flightId;
 	}
-	public Booking() {
+	public Flight() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
+		}
+	
 	public long getBookingId() {
 		return bookingId;
 	}
