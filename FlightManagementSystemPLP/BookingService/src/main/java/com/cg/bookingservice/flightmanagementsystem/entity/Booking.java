@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity 
 @Table(name="booking")
-public class Flight {
+public class Booking {
 	
 	
 	@Id
@@ -29,7 +29,7 @@ public class Flight {
 	private long noOfPassengers;
 	@Column(name="flight_id")
 	private long flightId;
-	public Flight(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
+	public Booking(long bookingId, long userId, Date bookingDate, long ticketCost, long noOfPassengers, long flightId) {
 		super();
 		this.bookingId = bookingId;
 		this.userId = userId;
@@ -38,7 +38,7 @@ public class Flight {
 		this.noOfPassengers = noOfPassengers;
 		this.flightId = flightId;
 	}
-	public Flight() {
+	public Booking() {
 		super();
 		}
 	

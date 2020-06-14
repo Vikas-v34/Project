@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.bookingservice.flightmanagementsystem.entity.Flight;
+import com.cg.bookingservice.flightmanagementsystem.entity.Booking;
 import com.cg.bookingservice.flightmanagementsystem.repository.BookingRepository;
 
 @Service
@@ -14,28 +14,28 @@ public class BookingImpl implements BookingService{
     BookingRepository bookingRepo;
 
 	@Override
-	public Flight addNewBooking(Flight booking) {
+	public Booking addNewBooking(Booking booking) {
 		// TODO Auto-generated method stub
 		return bookingRepo.save(booking);
 	}
 
 	@Override
-	public List<Flight> getAllBooking() {
+	public List<Booking> getAllBooking() {
 		// TODO Auto-generated method stub
 		return bookingRepo.findAll();
 	}
 
 	@Override
-	public Flight getBookingByBookingId(long bookingId) {
+	public Booking getBookingByBookingId(long bookingId) {
 		// TODO Auto-generated method stub
 		return bookingRepo.findById(bookingId).get();
 	}
 
 	@Override
-	public List<Flight> updateBookingByBookingId(long bookingId, Flight booking) {
+	public List<Booking> updateBookingByBookingId(long bookingId, Booking booking) {
 		// TODO Auto-generated method stub
-		Flight temp = null;
-		List<Flight> tempList = bookingRepo.findAllByBookingId(bookingId);
+		Booking temp = null;
+		List<Booking> tempList = bookingRepo.findAllByBookingId(bookingId);
 		for(int i=0;i<tempList.size();i++) {
 			temp = tempList.get(i);
 			temp.setBookingId(booking.getBookingId());
@@ -47,9 +47,9 @@ public class BookingImpl implements BookingService{
 	}
 
 	@Override
-	public Flight cancelingBookingByBookingId(long bookingId) {
+	public Booking cancelingBookingByBookingId(long bookingId) {
 		// TODO Auto-generated method stub
-		Flight temp = bookingRepo.deleteByBookingId(bookingId);
+		Booking temp = bookingRepo.deleteByBookingId(bookingId);
 		return bookingRepo.save(temp);
 	}
 
