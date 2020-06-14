@@ -1,5 +1,6 @@
 package com.cg.bookingservice.flightmanagementsystem.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,7 +69,7 @@ public class BookingController {
 	
 	//http://localhost:9092/bookingControl/updateBooking/1009
 	public List<Booking> invalidBookId(long bookId){
-		List<Booking> list = null;
+		List<Booking> list = new ArrayList<Booking>();
 		return list;
 	}
 	
