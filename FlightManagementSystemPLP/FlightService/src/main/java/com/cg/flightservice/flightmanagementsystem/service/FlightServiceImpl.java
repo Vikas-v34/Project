@@ -1,11 +1,15 @@
 package com.cg.flightservice.flightmanagementsystem.service;
 
 import java.util.List;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.flightservice.flightmanagementsystem.entity.Flight;
 import com.cg.flightservice.flightmanagementsystem.repository.FlightRepository;
 
+@Service
 public class FlightServiceImpl implements FlightService {
 	@Autowired
     FlightRepository FlightRepo;
@@ -20,10 +24,12 @@ public class FlightServiceImpl implements FlightService {
 		return FlightRepo.findById(flightId).get();
 	}
 	
-	/*
-	 * @Override public Flight getByCarrierName(String carrierName) { return
-	 * FlightRepo.findById(carrierName).get(); }
-	 */
+	
+	 @Override 
+	 public Flight getByCarrierName(String carrierName) { 
+		 return FlightRepo.findByCarrierName(carrierName); 	 
+	 }
+	 
 	@Override
 	public List<Flight> getAll() {
 		return FlightRepo.findAll();
@@ -53,11 +59,7 @@ public class FlightServiceImpl implements FlightService {
 		return FlightRepo.save(temp);
 	}
 
-	@Override
-	public Flight getByCarrierName(String carrierName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }
 

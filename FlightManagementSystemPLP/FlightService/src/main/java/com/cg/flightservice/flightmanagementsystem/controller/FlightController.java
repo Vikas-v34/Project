@@ -1,5 +1,6 @@
 package com.cg.flightservice.flightmanagementsystem.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +30,18 @@ public class FlightController {
 		return flightsrvce.addFlight(flight);
 	}
 	
+
+//	http://localhost:9090/flightControl/getAll
 	@GetMapping("/getAll")
 	List<Flight> getAll(){
 		return flightsrvce.getAll();
 	}
 	
-	@GetMapping("/getflightId")
-	Flight getByFlightId(){
-		return flightsrvce.getByFlightId(0l);
+//	http://localhost:9090/flightControl/getflightId/1001
+	@GetMapping("/getflightId/{flightId}")
+	@HystrixCommand(fallbackMethod = "invalidfId")
+	Flight getByFlightId(@PathVariable("flightId")long flightId){
+		return flightsrvce.getByFlightId(flightId);
 	}
 		
 
@@ -52,16 +57,36 @@ public class FlightController {
 	//To Delete by Flight Id
 	//http://localhost:9092/flightControl/deleteFlight/1001
 	@PutMapping("/deleteFlight/{flightId}")
-	@HystrixCommand(fallbackMethod = "invalidflightId")
+	@HystrixCommand(fallbackMethod = "invalidFlightId")
 	Flight deleteFlightByFlightId(@PathVariable("flightId")long flightId) {
 		return flightsrvce.deleteFlightByFlightId(flightId);
 	}
 	
+	
+	@GetMapping("/getByCarrierName/{carName}")
+	@HystrixCommand(fallbackMethod = "invalidCarrierName")
+	Flight getByCarrierName(@PathVariable("carName")String carName){
+		return flightsrvce.getByCarrierName(carName);
+		
+	}
+	
 	//http://localhost:9092/bookingControl/getById/1009
-	public Flight invalidflightId(long flightId) {
+	public List<Flight> invalidflightId(long flightId,Flight flight) {
+		List<Flight> list = new ArrayList<Flight>();
+		return  list;
+	}
+	
+	public Flight invaliCarrierName(String carName) {
+		return new Flight(0l,null,null,0l);
+	}
+	
+	public Flight invalidFlightId(long flightId) {
 		return  new Flight(0l,null,null,0l);
 	}
 	
+	public Flight invalidfId(long flightId) {
+		return  new Flight(0l,null,null,0l);
+	}
 	/*
 	 * //http://localhost:9092/bookingControl/updateBooking/1009 public
 	 * List<Booking> invalidBookId(long bookId,Booking booking){ List<Booking> list
