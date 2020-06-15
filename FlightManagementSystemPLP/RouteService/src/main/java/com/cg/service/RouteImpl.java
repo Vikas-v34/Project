@@ -16,7 +16,9 @@ public class RouteImpl implements RouteService {
 	RouteRepository routeRepo;
 	
 	@Override
-	public	List<Route> searchRouteForSourceDestionAndDateOFJouney(String sourceAirport,String destinationAirport,Date dateOfJourney){
+	public	List<Route> searchRouteForSourceDestionAndDateOFJouney(String sourceAirport,String destinationAirport,Date dateOfJourney)
+	{
+		System.out.println(routeRepo.findAllBySourceAirportAndDestinationAirportAndDateOfJourney(sourceAirport, destinationAirport, dateOfJourney));
 		return routeRepo.findAllBySourceAirportAndDestinationAirportAndDateOfJourney(sourceAirport, destinationAirport, dateOfJourney);
 	}
 	
