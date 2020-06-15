@@ -16,7 +16,7 @@ public interface FlightService {
 
 	List<Flight> updateFlightByFlightId(long flightId, Flight flight);
 
-	Flight getByCarrierName(String carrierName);
+	Flight getByCarrierName(String carrierName) throws Exception;
 
 	
 }

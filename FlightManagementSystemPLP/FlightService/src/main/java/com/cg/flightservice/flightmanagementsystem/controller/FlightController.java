@@ -65,7 +65,7 @@ public class FlightController {
 	
 	@GetMapping("/getByCarrierName/{carName}")
 	@HystrixCommand(fallbackMethod = "invalidCarrierName")
-	Flight getByCarrierName(@PathVariable("carName")String carName){
+	Flight getByCarrierName(@PathVariable("carName")String carName) throws Exception{
 		return flightsrvce.getByCarrierName(carName);
 		
 	}
@@ -76,16 +76,17 @@ public class FlightController {
 		return  list;
 	}
 	
-	public Flight invaliCarrierName(String carName) {
-		return new Flight(0l,null,null,0l);
+	public Flight invalidCarrierName(String carName) {
+		System.out.println("Ïnvalid Carrier Name");
+		return new Flight();
 	}
 	
 	public Flight invalidFlightId(long flightId) {
-		return  new Flight(0l,null,null,0l);
+		return  new Flight();
 	}
 	
 	public Flight invalidfId(long flightId) {
-		return  new Flight(0l,null,null,0l);
+		return  new Flight();
 	}
 	/*
 	 * //http://localhost:9092/bookingControl/updateBooking/1009 public

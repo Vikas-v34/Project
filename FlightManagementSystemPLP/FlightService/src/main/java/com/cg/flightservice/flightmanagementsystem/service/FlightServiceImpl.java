@@ -26,8 +26,8 @@ public class FlightServiceImpl implements FlightService {
 	
 	
 	 @Override 
-	 public Flight getByCarrierName(String carrierName) { 
-		 return FlightRepo.findByCarrierName(carrierName); 	 
+	 public Flight getByCarrierName(String carrierName) throws Exception { 
+		 return FlightRepo.findByCarrierName(carrierName).orElseThrow(()-> new Exception()); 	 
 	 }
 	 
 	@Override

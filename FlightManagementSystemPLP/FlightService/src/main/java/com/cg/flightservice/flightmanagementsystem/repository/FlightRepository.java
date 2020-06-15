@@ -1,6 +1,7 @@
 package com.cg.flightservice.flightmanagementsystem.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -14,6 +15,6 @@ public interface FlightRepository extends JpaRepository<Flight,Long>{
 
 	Flight deleteByFlightId(long flightId);
 
-	Flight findByCarrierName(String carrierName);
+	Optional<Flight> findByCarrierName(String carrierName);
 	
 }
