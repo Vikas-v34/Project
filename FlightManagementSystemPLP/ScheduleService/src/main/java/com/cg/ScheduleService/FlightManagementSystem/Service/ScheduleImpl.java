@@ -34,12 +34,13 @@ public class ScheduleImpl implements ScheduleService {
 
 	@Override
 	public Schedule getByRouteId(long routeid)throws RouteNotFoundException {
-		Optional<Schedule> optflight = schdlrepo.findById(routeid);
+		/*Optional<Schedule> optflight = schdlrepo.findById(routeid);
 		if (optflight.isPresent()) {
 			return optflight.get();
 		} else {
 			throw new RouteNotFoundException("Route not found for given routeid");
-		}
+		}*/
+		return schdlrepo.findByRouteId(routeid).orElseThrow(()->new RouteNotFoundException("Route not found for given routeid"));
 
 		
 	}

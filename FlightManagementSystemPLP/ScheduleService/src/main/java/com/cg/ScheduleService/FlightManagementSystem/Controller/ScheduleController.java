@@ -22,15 +22,14 @@ public class ScheduleController {
 	@Autowired(required=true)
 	ScheduleService schdlser;
 
-//	http://localhost:9091/scheduleCtrl/flightdetails
-	@GetMapping("/flightdetails")
+//	http://localhost:9091/scheduleCtrl/flightId
+	@GetMapping("/flightId")
 	public List<Schedule> getAllFlightsandRoutes() {
 		return schdlser.getAllFlightsandRoutes();
 	}
 //	http://localhost:9091/scheduleCtrl/flightId/1001
 	@GetMapping("/flightId/{flightid}")
-	@HystrixCommand(fallbackMethod = "invalidflightId",commandKey="vikasCommandKey",
-			groupKey="vikasGroupKet")
+	@HystrixCommand(fallbackMethod = "invalidflightId")
 	public Schedule getByFlightId(@PathVariable long flightid) throws FlightNotFoundException {
 
 		return schdlser.getByFlightId(flightid);
@@ -38,10 +37,12 @@ public class ScheduleController {
 	}
 //	http://localhost:9091/scheduleCtrl/routeId/101
 	@GetMapping("/routeId/{routeid}")
-	@HystrixCommand(fallbackMethod = "invalidrouteId" ,commandKey="vikasCommandKey",
-			groupKey="vikasGroupKet")
+	@HystrixCommand(fallbackMethod = "invalidrouteId")
 	public Schedule getByRouteId(@PathVariable("routeid") long routeid) throws RouteNotFoundException {
-
+		/*
+		 * System.out.println(routeid);
+		 * System.out.println(schdlser.getByRouteId(routeid));
+		 */
 		return schdlser.getByRouteId(routeid);
 
 	}
@@ -53,6 +54,6 @@ public class ScheduleController {
 
 	//public Schedule invalidrouteId(@PathVariable("routeId") long routeId) {
 	public Schedule invalidrouteId(long routeId) {
-	return new Schedule(0l,0l);
+	return new Schedule();
 	}
 }

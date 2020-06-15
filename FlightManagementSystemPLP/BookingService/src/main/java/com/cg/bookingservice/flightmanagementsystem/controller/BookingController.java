@@ -58,6 +58,7 @@ public class BookingController {
 	//To Cancel a Booking
 	//http://localhost:9092/bookingControl/cancelBooking
 	@PutMapping("/cancelBooking/{bookId}")
+	@HystrixCommand(fallbackMethod = "invalidbId")
 	Booking cancelingBookingByBookingId(@PathVariable("bookId")long bookId) {
 		return bookingsrvce.cancelingBookingByBookingId(bookId);
 	}
@@ -73,4 +74,7 @@ public class BookingController {
 		return list;
 	}
 	
+	public Booking invalidbId(long bookId) {
+		return  new Booking(10l,10l,null,0l,0l,0l);
+	}
 }
