@@ -45,4 +45,18 @@ public class ScheduleImpl implements ScheduleService {
 		
 	}
 
+
+	@Override
+	public Schedule addNewRoute(Schedule schedule) {
+		return schdlrepo.save(schedule);		
+	}
+
+
+	@Override
+	public void removeScheduleByFlightId(long flightId) {
+		
+				schdlrepo.deleteById(flightId);	
+			
+	}
+
 }

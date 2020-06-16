@@ -10,7 +10,6 @@ import javax.persistence.Id;
 public class Schedule {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="flight_Id")
 	private long flightId;
 	@Column(name="route_Id")

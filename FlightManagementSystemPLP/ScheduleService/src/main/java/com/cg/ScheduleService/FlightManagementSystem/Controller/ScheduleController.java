@@ -4,8 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,6 +49,17 @@ public class ScheduleController {
 		 */
 		return schdlser.getByRouteId(routeid);
 
+	}
+	
+	@PostMapping(value ="/create")
+	public Schedule scheduleFlight(@RequestBody Schedule schedule) {
+		return schdlser.addNewRoute(schedule);
+	}
+	
+	@DeleteMapping("/delete/flightId={fId}")
+	public String scheduleFlight(@PathVariable("fId")long flightId) {
+		schdlser.removeScheduleByFlightId(flightId);
+		return "Delete";
 	}
 
 	//public Schedule invalidflightId(@PathVariable("flightId") long flightId) {

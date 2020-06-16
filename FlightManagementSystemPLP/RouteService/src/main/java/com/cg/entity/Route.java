@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Route {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "route_id")
 	private long routeId;
 	@Column(name = "source_airport")

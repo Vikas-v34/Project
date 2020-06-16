@@ -11,7 +11,6 @@ import javax.persistence.Table;
 @Table(name="flight")
 public class Flight {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="flight_id")
 	private long flightId;
 	@Column(name="carrier_name")

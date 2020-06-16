@@ -19,6 +19,9 @@ public interface ScheduleService {
  
     public Schedule getByRouteId(long routeid)throws RouteNotFoundException ;
     
+    public Schedule addNewRoute(Schedule schedule);
+    
+    public void removeScheduleByFlightId(long flightId);
  
     
     
