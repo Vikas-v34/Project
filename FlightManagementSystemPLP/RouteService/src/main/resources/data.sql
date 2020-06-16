@@ -1,0 +1,4 @@
+insert into route(route_id,source_airport,destination_airport,arrival_time,departure_time,date_of_journey) values(5001,'MUMBAI','DELHI','03:00:00','06:00:00','2020-07-29');
+insert into route(route_id,source_airport,destination_airport,arrival_time,departure_time,date_of_journey) values(5002,'CHENNAI','KOLKATA','04:00:00','07:00:00','2020-06-22');
+insert into route(route_id,source_airport,destination_airport,arrival_time,departure_time,date_of_journey) values(5003,'DELHI','BANGALORE','03:00:00','05:00:00','2020-08-20');
+insert into route(route_id,source_airport,destination_airport,arrival_time,departure_time,date_of_journey) values(5004,'MUMBAI','KOLKATA','05:00:00','08:00:00','2020-09-19');
